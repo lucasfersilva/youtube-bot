@@ -6,14 +6,12 @@ class youtube_bot():
 
     def __init__(self):
         PROXY = "216.244.74.138:19006"
-        webdriver.DesiredCapabilities.FIREFOX['proxy'] = {
-            "httpProxy": PROXY,
-            "ftpProxy": PROXY,
-            "sslProxy": PROXY,
-            "noProxy": None,
-            "proxyType": "MANUAL",
-            "autodetect": False
-        }
+         webdriver.DesiredCapabilities.FIREFOX['proxy']={
+        "httpProxy":PROXY,
+        "ftpProxy":PROXY,
+        "sslProxy":PROXY,
+        "proxyType":"MANUAL"
+    }
         self.driver = webdriver.Firefox()
 
     def open_youtube_video(self):
