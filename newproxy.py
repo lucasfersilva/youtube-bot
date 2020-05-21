@@ -41,7 +41,7 @@ class youtube_bot():
 while True:
     a = youtube_bot()
     try:
-
+        print("1 more view")
         a.open_youtube_video()
         time.sleep(310)
         a.close_youtube_video()
