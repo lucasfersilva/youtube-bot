@@ -22,7 +22,7 @@ class youtube_bot():
             "proxyType": "MANUAL",
             "autodetect": False
         }
-        self.driver = webdriver.Chrome(executable_path="Chrome/chromedriver",chrome_options=options)
+        self.driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=options)
 
     def open_youtube_video(self):
         time.sleep(3)
