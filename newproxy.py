@@ -8,7 +8,7 @@ class youtube_bot():
 
     def __init__(self):
         
-        opttions = Options()
+        options = Options()
         
         options.add_experimental_option("detach", True)
         options.add_argument("--headless")
