@@ -41,7 +41,7 @@ class youtube_bot():
         self.driver.quit()
 
 a= youtube_bot()
-a.open_youtube_video()
+
 time.sleep(30)
 print("Congrats, it ran!!!")
 times = [110, 120, 150, 160, 200, 300, 220, 140, 290, 330]
@@ -49,6 +49,7 @@ while True:
 
     try:
         for i in times:
+            a.open_youtube_video()
             print("1 more view")
             a.close_youtube_video()
             time.sleep(i)
