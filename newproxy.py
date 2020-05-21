@@ -6,13 +6,15 @@ class youtube_bot():
 
     def __init__(self):
         PROXY = "216.244.74.138:19006"
-        webdriver.DesiredCapabilities.FIREFOX['proxy']={
-        "httpProxy":PROXY,
-        "ftpProxy":PROXY,
-        "sslProxy":PROXY,
-        "proxyType":"MANUAL"
-    }
-        self.driver = webdriver.Firefox()
+        webdriver.DesiredCapabilities.CHROME['proxy'] = {
+            "httpProxy": PROXY,
+            "ftpProxy": PROXY,
+            "sslProxy": PROXY,
+            "noProxy": None,
+            "proxyType": "MANUAL",
+            "autodetect": False
+        }
+        self.driver = webdriver.Chrome(executable_path="Chrome/chromedriver")
 
     def open_youtube_video(self):
         time.sleep(3)
@@ -83,4 +85,3 @@ while True:
     a.close_youtube_video()
     time.sleep(200)
 
-driver.quit()    
