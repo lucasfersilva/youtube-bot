@@ -2,9 +2,7 @@ from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
 from RC import RC
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 800))  
-display.start()
+
 
 class youtube_bot():
 
