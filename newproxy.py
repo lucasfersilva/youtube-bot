@@ -6,7 +6,7 @@ class youtube_bot():
 
     def __init__(self):
         PROXY = "216.244.74.138:19006"
-        webdriver.DesiredCapabilities.CHROME['proxy'] = {
+        webdriver.DesiredCapabilities.FIREFOX['proxy'] = {
             "httpProxy": PROXY,
             "ftpProxy": PROXY,
             "sslProxy": PROXY,
