@@ -1,10 +1,15 @@
 from selenium import webdriver
 import time
-
+from selenium.webdriver.chrome.options import Options
 
 class youtube_bot():
 
     def __init__(self):
+        options = Options()
+        options.add_experimental_option("detach", True)
+        options.add_argument("--window-position=0,0")
+        options.add_argument("--headless")
+
         PROXY = "216.244.74.138:19006"
         webdriver.DesiredCapabilities.CHROME['proxy'] = {
             "httpProxy": PROXY,
@@ -14,7 +19,7 @@ class youtube_bot():
             "proxyType": "MANUAL",
             "autodetect": False
         }
-        self.driver = webdriver.Chrome(executable_path="Chrome/chromedriver")
+        self.driver = webdriver.Chrome(executable_path="Chrome/chromedriver",chrome_options=options)
 
     def open_youtube_video(self):
         time.sleep(3)
