@@ -83,3 +83,4 @@ while True:
     a.close_youtube_video()
     time.sleep(200)
 
+driver.quit()    
