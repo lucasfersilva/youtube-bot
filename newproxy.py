@@ -7,8 +7,9 @@ class youtube_bot():
     def __init__(self):
         options = Options()
         chrome_options = Options()
-        chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--headless')
+        
         chrome_options.add_argument('--disable-dev-shm-usage')
 
         PROXY = "216.244.74.138:19006"
