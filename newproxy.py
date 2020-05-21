@@ -7,8 +7,8 @@ class youtube_bot():
 
     def __init__(self):
         opt= webdriver.ChromeOptions()
-        opt = Options()
-        options.binary-location='/usr/bin/google-chrome-stable'
+        opttions = Options()
+        opt.binary-location='/usr/bin/google-chrome-stable'
         options.add_experimental_option("detach", True)
         options.add_argument("--headless")
         PROXY = "216.244.74.138:19006"
