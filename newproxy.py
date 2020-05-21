@@ -8,7 +8,7 @@ class youtube_bot():
     def __init__(self):
         options = Options()
         options.add_experimental_option("detach", True)
-        
+        options.add_argument("--headless")
         PROXY = "216.244.74.138:19006"
         options.add_argument('--proxy-server=%s' % PROXY)
         webdriver.DesiredCapabilities.CHROME['proxy'] = {
