@@ -6,7 +6,8 @@ from RC import RC
 class youtube_bot():
 
     def __init__(self):
-        options = Options()
+        opt= webdriver.ChromeOptions()
+        opt = Options()
         options.binary-location='/usr/bin/google-chrome-stable'
         options.add_experimental_option("detach", True)
         options.add_argument("--headless")
