@@ -9,6 +9,9 @@ class youtube_bot():
         options = Options()
         options.add_experimental_option("detach", True)
         options.add_argument("--headless")
+
+
+
         PROXY = "216.244.74.138:19006"
         options.add_argument('--proxy-server=%s' % PROXY)
         webdriver.DesiredCapabilities.CHROME['proxy'] = {
@@ -32,7 +35,7 @@ class youtube_bot():
             pass
         time.sleep(2)
         print("ok")
-        times = [110,120,150,160,200,300,220,140,290,330]
+
 
     def close_youtube_video(self):
         self.driver.refresh()
@@ -40,12 +43,10 @@ class youtube_bot():
 
 while True:
     a = youtube_bot()
-    print("1 more view")
     a.open_youtube_video()
     time.sleep(310)
     a.close_youtube_video()
-    time.sleep(320)
-    
+    time.sleep(310)
 
 
 
