@@ -1,19 +1,16 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
+from RC import RC
 
 class youtube_bot():
 
     def __init__(self):
         options = Options()
-        options.binary_location = "/usr/bin/google-chrome"    #chrome binary location specified here
-        options.add_argument("--start-maximized") #open Browser in maximized mode
-        options.add_argument("--no-sandbox") #bypass OS security model
-        options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
-        options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        options.add_experimental_option('useAutomationExtension', False)
-
+        options.add_experimental_option("detach", True)
+        options.add_argument("--headless")
         PROXY = "216.244.74.138:19006"
+        options.add_argument('--proxy-server=%s' % PROXY)
         webdriver.DesiredCapabilities.CHROME['proxy'] = {
             "httpProxy": PROXY,
             "ftpProxy": PROXY,
@@ -22,74 +19,34 @@ class youtube_bot():
             "proxyType": "MANUAL",
             "autodetect": False
         }
-        self.driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=options)
+        self.driver = webdriver.Chrome(executable_path=RC.chromedriver_path,options=options)
+        self.driver.get(RC.youtube_link)
 
     def open_youtube_video(self):
-        time.sleep(3)
+        time.sleep(20)
         #paste youtube inside of self.driver.get
-        self.driver.get("https://www.youtube.com/watch?v=zwvWrHdw7tU&feature=youtu.be")
+        try:
+            self.driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[4]/button').click()
+            print('Video running')
+        except:
+            pass
         time.sleep(2)
         print("ok")
 
 
     def close_youtube_video(self):
-        self.driver.close()
+        self.driver.refresh()
 
 
 while True:
     a = youtube_bot()
     a.open_youtube_video()
-    time.sleep(130)
+    time.sleep(310)
     a.close_youtube_video()
-    time.sleep(190)
-    #second
-    a.open_youtube_video()
-    time.sleep(200)
-    a.close_youtube_video()
-    time.sleep(120)
-    # third
-    a.open_youtube_video()
-    time.sleep(150)
-    a.close_youtube_video()
-    time.sleep(170)
-    # third
-    a.open_youtube_video()
-    time.sleep(150)
-    a.close_youtube_video()
-    time.sleep(170)
-    # fourth
-    a.open_youtube_video()
-    time.sleep(300)
-    a.close_youtube_video()
-    time.sleep(20)
-    # fifth
-    a.open_youtube_video()
-    time.sleep(280)
-    a.close_youtube_video()
-    time.sleep(40)
-    # sixth
-    a.open_youtube_video()
-    time.sleep(260)
-    a.close_youtube_video()
-    time.sleep(60)
-    # seventh
-    a.open_youtube_video()
-    time.sleep(400)
-    a.close_youtube_video()
-    time.sleep(40)
-    # eigth
-    a.open_youtube_video()
-    time.sleep(110)
-    a.close_youtube_video()
-    time.sleep(210)
-    # nineth
-    a.open_youtube_video()
-    time.sleep(120)
-    a.close_youtube_video()
-    time.sleep(200)
-    # tenth
-    a.open_youtube_video()
-    time.sleep(180)
-    a.close_youtube_video()
-    time.sleep(200)
+    time.sleep(310)
+
+
+
+
+
 
