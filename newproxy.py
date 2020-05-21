@@ -32,7 +32,7 @@ class youtube_bot():
             pass
         time.sleep(2)
         print("ok")
-        times = [110,120,150,160,200,300,220,140,290,330]
+
 
     def close_youtube_video(self):
         self.driver.refresh()
@@ -41,19 +41,18 @@ class youtube_bot():
         self.driver.quit()
 
 a= youtube_bot()
+a.open_youtube_video()
+time.sleep(60)
 while True:
     times = [110, 120, 150, 160, 200, 300, 220, 140, 290, 330]
     try:
         for i in times:
             print("1 more view")
-
-            a.open_youtube_video()
-            time.sleep(i)
             a.close_youtube_video()
-            time.sleep(320)
+            time.sleep(i)
     except:
         a.quit()
-
+        print("Ok the proxy did not worked propperly, restart the program")
 
 
 
