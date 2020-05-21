@@ -42,9 +42,11 @@ class youtube_bot():
 
 a= youtube_bot()
 a.open_youtube_video()
-time.sleep(60)
+time.sleep(30)
+print("Congrats, it ran!!!")
+times = [110, 120, 150, 160, 200, 300, 220, 140, 290, 330]
 while True:
-    times = [110, 120, 150, 160, 200, 300, 220, 140, 290, 330]
+
     try:
         for i in times:
             print("1 more view")
