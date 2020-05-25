@@ -11,7 +11,7 @@ class youtube_bot():
 
         PROXY = "163.172.221.119:19002"
         self.options.add_argument('--proxy-server=%s' % PROXY)
-        self.options.addArguments("--no-sandbox");
+        self.options.add_arguments("--no-sandbox");
         self.options.add_argument('--disable-dev-shm-usage')
         webdriver.DesiredCapabilities.CHROME['proxy'] = {
             "httpProxy": PROXY,
