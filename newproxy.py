@@ -10,6 +10,7 @@ class youtube_bot():
         self.options.add_experimental_option("detach", True)
 
         PROXY = "163.172.221.119:19002"
+        self.options.add_argument('--headless')
         self.options.add_argument('--proxy-server=%s' % PROXY)
         self.options.add_argument("--no-sandbox");
         self.options.add_argument('--disable-dev-shm-usage')
